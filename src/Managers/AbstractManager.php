@@ -154,7 +154,7 @@ abstract class AbstractManager
     {
         $name = $name ?: $this->getDefaultConnection();
 
-        $connections = $this->config->get($this->getConfigName().'::connections';
+        $connections = $this->config->get($this->getConfigName().'::connections');
 
         if (is_null($config = array_get($connections, $name))) {
             throw new \InvalidArgumentException("Connection [$name] not configured.");
