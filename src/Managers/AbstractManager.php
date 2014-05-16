@@ -17,6 +17,7 @@
 namespace GrahamCampbell\Manager\Managers;
 
 use Illuminate\Config\Repository;
+use GrahamCampbell\Manager\Interfaces\ManagerInterface;
 
 /**
  * This is the abstract manager class.
@@ -27,7 +28,7 @@ use Illuminate\Config\Repository;
  * @license    https://github.com/GrahamCampbell/Laravel-Manager/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Manager
  */
-abstract class AbstractManager
+abstract class AbstractManager implements ManagerInterface
 {
     /**
      * The config instance.
