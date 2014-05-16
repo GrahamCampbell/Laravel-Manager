@@ -59,7 +59,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $this->assertArrayHasKey('example', $manager->getConnections());
 
-        $manager = $this->getExampleManager();
+        $manager = $this->getManager();
 
         $manager->disconnect('example');
 
@@ -97,7 +97,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $this->assertArrayHasKey('example', $manager->getConnections());
 
-        $manager = $this->getExampleManager();
+        $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/manager::default')->andReturn('example');
@@ -109,7 +109,7 @@ class AbstractManagerTest extends AbstractTestCase
 
     public function testConnectionError()
     {
-        $manager = $this->getExampleManager();
+        $manager = $this->getManager();
 
         $config = array('driver' => 'error');
 
@@ -131,7 +131,7 @@ class AbstractManagerTest extends AbstractTestCase
 
     public function testGetDefaultConnection()
     {
-        $manager = $this->getExampleManager();
+        $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/manager::default')->andReturn('example');
@@ -143,7 +143,7 @@ class AbstractManagerTest extends AbstractTestCase
 
     public function testSetDefaultConnection()
     {
-        $manager = $this->getExampleManager();
+        $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('set')->once()
             ->with('graham-campbell/manager::default', 'new');
@@ -153,7 +153,7 @@ class AbstractManagerTest extends AbstractTestCase
 
     public function testExtendName()
     {
-        $manager = $this->getExampleManager();
+        $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/manager::connections')->andReturn(array('foo' => array('driver' => 'hello')));
@@ -177,7 +177,7 @@ class AbstractManagerTest extends AbstractTestCase
 
     public function testExtendDriver()
     {
-        $manager = $this->getExampleManager();
+        $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/manager::connections')->andReturn(array('qwerty' => array('driver' => 'bar')));
@@ -203,7 +203,7 @@ class AbstractManagerTest extends AbstractTestCase
     {
         $config = array('driver' => 'manager');
 
-        $manager = $this->getExampleManager();
+        $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/manager::default')->andReturn('example');
@@ -220,7 +220,7 @@ class AbstractManagerTest extends AbstractTestCase
         $this->assertArrayHasKey('example', $manager->getConnections());
     }
 
-    protected function getExampleManager()
+    protected function getManager()
     {
         $repo = Mockery::mock('Illuminate\Config\Repository');
 
@@ -229,7 +229,7 @@ class AbstractManagerTest extends AbstractTestCase
 
     protected function getConfigManager(array $config)
     {
-        $manager = $this->getExampleManager();
+        $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->twice()
             ->with('graham-campbell/manager::connections')->andReturn(array('example' => $config));
