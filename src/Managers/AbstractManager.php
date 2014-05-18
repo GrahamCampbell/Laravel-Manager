@@ -111,7 +111,7 @@ abstract class AbstractManager implements ManagerInterface
      * Create the connection instance.
      *
      * @param  array  $config
-     * @return string
+     * @return mixed
      */
     abstract protected function createConnection(array $config);
 
