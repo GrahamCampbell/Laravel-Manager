@@ -81,6 +81,8 @@ The `'createConnection'` method will be called with the specific connection conf
 
 The `'getConfigName'` method must return the name of the connection config. This may be `'yourname\yourpackage'` for example.
 
+You can also dynamically call methods on the default connection due to the use of `__call` so instead of writing `->connection()->methodName()`, you can just jump straight in with `->methodName()`.
+
 For a simple example of a manager class implementing these methods, see my [DropboxManager](https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/src/Managers/DropboxManager.php) class from my [Laravel Dropbox](https://github.com/GrahamCampbell/Laravel-Dropbox) package.
 
 **Further Information**
