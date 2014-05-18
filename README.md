@@ -47,7 +47,11 @@ Laravel Manager requires no configuration. Just follow the simple install instru
 
 **Interfaces\ConnectorInterface**
 
-This interface defines one public method. The `'connect'` method accepts one paramater which is an array of config. This interface is not used by this package, but is used by [Laravel Flysystem](https://github.com/GrahamCampbell/Laravel-Flysystem) and [Laravel Dropbox](https://github.com/GrahamCampbell/Laravel-Dropbox).
+This interface defines one public method.
+
+The `'connect'` method accepts one paramater which is an array of config.
+
+This interface is not used by this package, but is used by [Laravel Flysystem](https://github.com/GrahamCampbell/Laravel-Flysystem) and [Laravel Dropbox](https://github.com/GrahamCampbell/Laravel-Dropbox).
 
 **Interfaces\ManagerInterface**
 
