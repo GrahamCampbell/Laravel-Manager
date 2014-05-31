@@ -12,7 +12,7 @@ Laravel Manager
 
 ## What Is Laravel Manager?
 
-Laravel Manager provides some manager functionality for [Laravel 4.1](http://laravel.com).
+Laravel Manager provides some manager functionality for [Laravel 4.1+](http://laravel.com).
 
 * Laravel Manager was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).
 * Laravel Manager uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Manager) with [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Manager) to check everything is working.
@@ -24,8 +24,8 @@ Laravel Manager provides some manager functionality for [Laravel 4.1](http://lar
 
 ## System Requirements
 
-* PHP 5.4.7+ or HHVM 3.0+.
-* You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
+* PHP 5.4.7+ or HHVM 3.1+.
+* You will need [Laravel 4.1+](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Manager.
 
 
@@ -33,7 +33,7 @@ Laravel Manager provides some manager functionality for [Laravel 4.1](http://lar
 
 Please check the system requirements before installing Laravel Manager.
 
-To get the latest version of Laravel Manager, simply require `"graham-campbell/manager": "0.1.*@alpha"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Manager, simply require `"graham-campbell/manager": "~1.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 Once Laravel Manager is installed, you can extend or implement the classes in this package to speed up writing Laravel packages further. There are no service providers to register.
 
