@@ -6,6 +6,7 @@ CHANGE LOG
 
 * Upgrade to Laravel ~4.1
 * Minor refactoring
+* Support use without multiple drivers too
 
 
 ## V0.1 Alpha (31/05/2014)

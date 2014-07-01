@@ -129,10 +129,10 @@ abstract class AbstractManager implements ManagerInterface
             return call_user_func($this->extensions[$name], $config);
         }
 
-        $driver = $config['driver'];
-
-        if (isset($this->extensions[$driver])) {
-            return call_user_func($this->extensions[$driver], $config);
+        if ($driver = array_get($config, 'driver')) {
+            if (isset($this->extensions[$driver])) {
+                return call_user_func($this->extensions[$driver], $config);
+            }
         }
 
         return $this->createConnection($config);
