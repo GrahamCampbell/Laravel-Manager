@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Manager\Managers;
+namespace GrahamCampbell\Tests\Manager;
 
 use Mockery;
-use GrahamCampbell\Manager\Managers\AbstractManager;
+use GrahamCampbell\Manager\AbstractManager;
 use GrahamCampbell\TestBench\AbstractTestCase;
 
 /**
@@ -41,7 +41,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->connection('example');
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\Managers\ExampleClass', $return);
+        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
 
         $this->assertEquals($return->getName(), 'example');
 
@@ -51,7 +51,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->reconnect('example');
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\Managers\ExampleClass', $return);
+        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
 
         $this->assertEquals($return->getName(), 'example');
 
@@ -79,7 +79,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->connection();
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\Managers\ExampleClass', $return);
+        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
 
         $this->assertEquals($return->getName(), 'example');
 
@@ -89,7 +89,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->reconnect();
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\Managers\ExampleClass', $return);
+        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
 
         $this->assertEquals($return->getName(), 'example');
 
@@ -166,7 +166,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->connection('foo');
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\Managers\FooClass', $return);
+        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\FooClass', $return);
 
         $this->assertEquals($return->getName(), 'foo');
 
@@ -190,7 +190,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->connection('qwerty');
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\Managers\BarClass', $return);
+        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\BarClass', $return);
 
         $this->assertEquals($return->getName(), 'qwerty');
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Manager\Managers;
+namespace GrahamCampbell\Manager;
 
 use Illuminate\Config\Repository;
 use GrahamCampbell\Manager\Interfaces\ManagerInterface;

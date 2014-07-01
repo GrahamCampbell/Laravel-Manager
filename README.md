@@ -58,7 +58,7 @@ The `'extend'` method has two required parameter. The first is the name of a con
 
 The `'getConnections'` method will return an array of all the connections currently in the pool.
 
-**Managers\AbstractManager**
+**AbstractManager**
 
 This abstract class implements the ManagerInterface. It has two abstract protected methods that must be implemented by extending classes.
 
@@ -68,7 +68,7 @@ The `'getConfigName'` method must return the name of the connection config. This
 
 You can also dynamically call methods on the default connection due to the use of `__call` so instead of writing `->connection()->methodName()`, you can just jump straight in with `->methodName()`.
 
-For a simple example of a manager class implementing these methods, see my [DropboxManager](https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/src/Managers/DropboxManager.php) class from my [Laravel Dropbox](https://github.com/GrahamCampbell/Laravel-Dropbox) package.
+For a simple example of a manager class implementing these methods, see my [DropboxManager](https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/src/DropboxManager.php) class from my [Laravel Dropbox](https://github.com/GrahamCampbell/Laravel-Dropbox) package.
 
 **Further Information**
 
