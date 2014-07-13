@@ -30,7 +30,7 @@ Laravel Manager requires no configuration. Just follow the simple install instru
 
 ## Usage
 
-**Interfaces\ConnectorInterface**
+##### ConnectorInterface
 
 This interface defines one public method.
 
@@ -38,7 +38,7 @@ The `'connect'` method accepts one paramater which is an array of config.
 
 This interface is not used by this package, but is used by [Laravel Flysystem](https://github.com/GrahamCampbell/Laravel-Flysystem) and [Laravel Dropbox](https://github.com/GrahamCampbell/Laravel-Dropbox).
 
-**Interfaces\ManagerInterface**
+##### ManagerInterface
 
 This interface defines the public methods a manager class must implement.
 
@@ -58,9 +58,9 @@ The `'extend'` method has two required parameter. The first is the name of a con
 
 The `'getConnections'` method will return an array of all the connections currently in the pool.
 
-**AbstractManager**
+##### AbstractManager
 
-This abstract class implements the ManagerInterface. It has two abstract protected methods that must be implemented by extending classes.
+This abstract class implements the `ManagerInterface`. It has two abstract protected methods that must be implemented by extending classes.
 
 The `'createConnection'` method will be called with the specific connection config as the first paramater. It must return a connection instance.
 
@@ -70,7 +70,7 @@ You can also dynamically call methods on the default connection due to the use o
 
 For a simple example of a manager class implementing these methods, see my [DropboxManager](https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/src/DropboxManager.php) class from my [Laravel Dropbox](https://github.com/GrahamCampbell/Laravel-Dropbox) package.
 
-**Further Information**
+##### Further Information
 
 Feel free to check out the [API Documentation](http://docs.grahamjcampbell.co.uk) for Laravel Manager.
 
