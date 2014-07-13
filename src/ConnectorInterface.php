@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Manager\Interfaces;
+namespace GrahamCampbell\Manager;
 
 /**
  * This is the connector interface.

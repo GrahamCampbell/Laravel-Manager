@@ -17,7 +17,6 @@
 namespace GrahamCampbell\Manager;
 
 use Illuminate\Config\Repository;
-use GrahamCampbell\Manager\Interfaces\ManagerInterface;
 
 /**
  * This is the abstract manager class.
