@@ -107,6 +107,9 @@ class AbstractManagerTest extends AbstractTestCase
         $this->assertEquals($manager->getConnections(), array());
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
     public function testConnectionError()
     {
         $manager = $this->getManager();
@@ -118,15 +121,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $this->assertEquals($manager->getConnections(), array());
 
-        $return = null;
-
-        try {
-            $manager->connection('error');
-        } catch (\Exception $e) {
-            $return = $e;
-        }
-
-        $this->assertInstanceOf('InvalidArgumentException', $return);
+        $manager->connection('error');
     }
 
     public function testGetDefaultConnection()
