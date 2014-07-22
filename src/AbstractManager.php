@@ -156,7 +156,7 @@ abstract class AbstractManager implements ManagerInterface
 
         $connections = $this->config->get($this->getConfigName().'::connections');
 
-        if (is_null($config = array_get($connections, $name))) {
+        if (!is_array($config = array_get($connections, $name)) && !$config) {
             throw new \InvalidArgumentException("Connection [$name] not configured.");
         }
 
