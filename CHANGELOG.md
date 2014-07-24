@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V1.0.1 (Upcoming - August 2014)
+
+* Stricter config validation
+* Minor tweaks
+
+
 ## V1.0 (20/07/2014)
 
 * Bumped to stable
