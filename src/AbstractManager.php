@@ -149,6 +149,8 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @param  string  $name
      * @return array
+     *
+     * @throws \InvalidArgumentException
      */
     public function getConnectionConfig($name)
     {
