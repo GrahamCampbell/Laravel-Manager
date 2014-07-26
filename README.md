@@ -74,7 +74,7 @@ For a simple example of a manager class implementing these methods, see my [Drop
 
 Feel free to check out the [API Documentation](http://docs.grahamjcampbell.co.uk) for Laravel Manager.
 
-You may see an example of implementation in [Laravel Flysystem](https://github.com/GrahamCampbell/Laravel-Flysystem) and [Laravel Dropbox](https://github.com/GrahamCampbell/Laravel-Dropbox).
+You may see an example of implementation in [Laravel Flysystem](https://github.com/GrahamCampbell/Laravel-Flysystem), [Laravel Dropbox](https://github.com/GrahamCampbell/Laravel-Dropbox), [Laravel DigitalOcean](https://github.com/GrahamCampbell/Laravel-DigitalOcean), and [Laravel GitHub](https://github.com/GrahamCampbell/Laravel-GitHub).
 
 
 ## License
