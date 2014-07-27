@@ -19,18 +19,17 @@ namespace GrahamCampbell\Manager;
 /**
  * This is the manager interface.
  *
- * @package    Laravel-Manager
- * @author     Graham Campbell
- * @copyright  Copyright 2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Manager/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-Manager
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-Manager/blob/master/LICENSE.md> Apache 2.0
  */
 interface ManagerInterface
 {
     /**
      * Get a connection instance.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return mixed
      */
     public function connection($name = null);
@@ -38,7 +37,8 @@ interface ManagerInterface
     /**
      * Reconnect to the given connection.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return mixed
      */
     public function reconnect($name = null);
@@ -46,7 +46,8 @@ interface ManagerInterface
     /**
      * Disconnect from the given connection.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return void
      */
     public function disconnect($name = null);
@@ -54,7 +55,8 @@ interface ManagerInterface
     /**
      * Get the configuration for a connection.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return array
      */
     public function getConnectionConfig($name);
@@ -69,7 +71,8 @@ interface ManagerInterface
     /**
      * Set the default connection name.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return void
      */
     public function setDefaultConnection($name);
@@ -77,8 +80,9 @@ interface ManagerInterface
     /**
      * Register an extension connection resolver.
      *
-     * @param  string    $name
-     * @param  callable  $resolver
+     * @param string   $name
+     * @param callable $resolver
+     *
      * @return void
      */
     public function extend($name, $resolver);

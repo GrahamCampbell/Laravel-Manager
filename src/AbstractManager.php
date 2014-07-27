@@ -21,39 +21,38 @@ use Illuminate\Config\Repository;
 /**
  * This is the abstract manager class.
  *
- * @package    Laravel-Manager
- * @author     Graham Campbell
- * @copyright  Copyright 2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Manager/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-Manager
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-Manager/blob/master/LICENSE.md> Apache 2.0
  */
 abstract class AbstractManager implements ManagerInterface
 {
     /**
      * The config instance.
      *
-     * @var \Illuminate\Config\Repository
+     * @type \Illuminate\Config\Repository
      */
     protected $config;
 
     /**
      * The active connection instances.
      *
-     * @var array
+     * @type array
      */
     protected $connections = array();
 
     /**
      * The custom connection resolvers.
      *
-     * @var array
+     * @type array
      */
     protected $extensions = array();
 
     /**
      * Create a new manager manager instance.
      *
-     * @param  \Illuminate\Config\Repository   $config
+     * @param \Illuminate\Config\Repository $config
+     *
      * @return void
      */
     public function __construct(Repository $config)
@@ -64,7 +63,8 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Get a connection instance.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return mixed
      */
     public function connection($name = null)
@@ -81,7 +81,8 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Reconnect to the given connection.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return mixed
      */
     public function reconnect($name = null)
@@ -96,7 +97,8 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Disconnect from the given connection.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return void
      */
     public function disconnect($name = null)
@@ -109,7 +111,8 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Create the connection instance.
      *
-     * @param  array  $config
+     * @param array $config
+     *
      * @return mixed
      */
     abstract protected function createConnection(array $config);
@@ -117,7 +120,8 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Make the connection instance.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return mixed
      */
     protected function makeConnection($name)
@@ -147,10 +151,11 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Get the configuration for a connection.
      *
-     * @param  string  $name
-     * @return array
+     * @param string $name
      *
      * @throws \InvalidArgumentException
+     *
+     * @return array
      */
     public function getConnectionConfig($name)
     {
@@ -180,7 +185,8 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Set the default connection name.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return void
      */
     public function setDefaultConnection($name)
@@ -191,8 +197,9 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Register an extension connection resolver.
      *
-     * @param  string    $name
-     * @param  callable  $resolver
+     * @param string   $name
+     * @param callable $resolver
+     *
      * @return void
      */
     public function extend($name, $resolver)
@@ -223,8 +230,9 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Dynamically pass methods to the default connection.
      *
-     * @param  string  $method
-     * @param  array   $parameters
+     * @param string $method
+     * @param array  $parameters
+     *
      * @return mixed
      */
     public function __call($method, $parameters)

@@ -23,11 +23,9 @@ use GrahamCampbell\TestBench\AbstractTestCase;
 /**
  * This is the abstract manager test class.
  *
- * @package    Laravel-Manager
- * @author     Graham Campbell
- * @copyright  Copyright 2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Manager/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-Manager
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-Manager/blob/master/LICENSE.md> Apache 2.0
  */
 class AbstractManagerTest extends AbstractTestCase
 {
@@ -238,7 +236,8 @@ class ExampleManager extends AbstractManager
     /**
      * Create the connection instance.
      *
-     * @param  array  $config
+     * @param array $config
+     *
      * @return string
      */
     protected function createConnection(array $config)
