@@ -30,7 +30,7 @@ interface ConnectorInterface
      *
      * @param array $config
      *
-     * @return mixed
+     * @return object
      */
     public function connect(array $config);
 }

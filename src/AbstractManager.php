@@ -65,7 +65,7 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @param string $name
      *
-     * @return mixed
+     * @return object
      */
     public function connection($name = null)
     {
@@ -83,7 +83,7 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @param string $name
      *
-     * @return mixed
+     * @return object
      */
     public function reconnect($name = null)
     {
@@ -210,7 +210,7 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Return all of the created connections.
      *
-     * @return array
+     * @return object[]
      */
     public function getConnections()
     {
