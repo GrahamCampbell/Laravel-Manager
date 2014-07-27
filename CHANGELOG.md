@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V1.0.1 (Upcoming - August 2014)
+## V1.0.1 (27/07/2014)
 
 * Stricter config validation
 * Minor tweaks
