@@ -30,21 +30,21 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * The config instance.
      *
-     * @type \Illuminate\Config\Repository
+     * @var \Illuminate\Config\Repository
      */
     protected $config;
 
     /**
      * The active connection instances.
      *
-     * @type array
+     * @var array
      */
     protected $connections = array();
 
     /**
      * The custom connection resolvers.
      *
-     * @type array
+     * @var array
      */
     protected $extensions = array();
 
