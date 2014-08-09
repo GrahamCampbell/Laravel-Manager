@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.0.2 (09/08/2014)
+
+* Corrected the license comments
+
+
 ## V1.0.1 (27/07/2014)
 
 * Stricter config validation
