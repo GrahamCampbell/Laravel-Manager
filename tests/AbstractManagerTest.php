@@ -283,7 +283,6 @@ class ExampleClass extends AbstractClass
     //
 }
 
-
 class FooClass extends AbstractClass
 {
     //
