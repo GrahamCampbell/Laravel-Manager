@@ -35,15 +35,15 @@ class AbstractManagerTest extends AbstractTestCase
 
         $manager = $this->getConfigManager($config);
 
-        $this->assertEquals($manager->getConnections(), array());
+        $this->assertSame(array(), $manager->getConnections());
 
         $return = $manager->connection('example');
 
         $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
 
-        $this->assertEquals($return->getName(), 'example');
+        $this->assertSame('example', $return->getName());
 
-        $this->assertEquals($return->getDriver(), 'manager');
+        $this->assertSame('manager', $return->getDriver());
 
         $this->assertArrayHasKey('example', $manager->getConnections());
 
@@ -51,9 +51,9 @@ class AbstractManagerTest extends AbstractTestCase
 
         $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
 
-        $this->assertEquals($return->getName(), 'example');
+        $this->assertSame('example', $return->getName());
 
-        $this->assertEquals($return->getDriver(), 'manager');
+        $this->assertSame('manager', $return->getDriver());
 
         $this->assertArrayHasKey('example', $manager->getConnections());
 
@@ -61,7 +61,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $manager->disconnect('example');
 
-        $this->assertEquals($manager->getConnections(), array());
+        $this->assertSame(array(), $manager->getConnections());
     }
 
     public function testConnectionNull()
@@ -73,15 +73,15 @@ class AbstractManagerTest extends AbstractTestCase
         $manager->getConfig()->shouldReceive('get')->twice()
             ->with('graham-campbell/manager::default')->andReturn('example');
 
-        $this->assertEquals($manager->getConnections(), array());
+        $this->assertSame(array(), $manager->getConnections());
 
         $return = $manager->connection();
 
         $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
 
-        $this->assertEquals($return->getName(), 'example');
+        $this->assertSame('example', $return->getName());
 
-        $this->assertEquals($return->getDriver(), 'manager');
+        $this->assertSame('manager', $return->getDriver());
 
         $this->assertArrayHasKey('example', $manager->getConnections());
 
@@ -89,9 +89,9 @@ class AbstractManagerTest extends AbstractTestCase
 
         $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
 
-        $this->assertEquals($return->getName(), 'example');
+        $this->assertSame('example', $return->getName());
 
-        $this->assertEquals($return->getDriver(), 'manager');
+        $this->assertSame('manager', $return->getDriver());
 
         $this->assertArrayHasKey('example', $manager->getConnections());
 
@@ -102,7 +102,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $manager->disconnect();
 
-        $this->assertEquals($manager->getConnections(), array());
+        $this->assertSame(array(), $manager->getConnections());
     }
 
     /**
@@ -117,31 +117,29 @@ class AbstractManagerTest extends AbstractTestCase
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/manager::connections')->andReturn(array('example' => $config));
 
-        $this->assertEquals($manager->getConnections(), array());
+        $this->assertSame(array(), $manager->getConnections());
 
         $manager->connection('error');
     }
 
-    public function testGetDefaultConnection()
+    public function testDefaultConnection()
     {
         $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/manager::default')->andReturn('example');
 
-        $return = $manager->getDefaultConnection();
-
-        $this->assertEquals($return, 'example');
-    }
-
-    public function testSetDefaultConnection()
-    {
-        $manager = $this->getManager();
+        $this->assertSame('example', $manager->getDefaultConnection());
 
         $manager->getConfig()->shouldReceive('set')->once()
             ->with('graham-campbell/manager::default', 'new');
 
         $manager->setDefaultConnection('new');
+
+        $manager->getConfig()->shouldReceive('get')->once()
+            ->with('graham-campbell/manager::default')->andReturn('new');
+
+        $this->assertSame('new', $manager->getDefaultConnection());
     }
 
     public function testExtendName()
@@ -155,15 +153,15 @@ class AbstractManagerTest extends AbstractTestCase
             return new FooClass($config['name'], $config['driver']);
         });
 
-        $this->assertEquals($manager->getConnections(), array());
+        $this->assertSame(array(), $manager->getConnections());
 
         $return = $manager->connection('foo');
 
         $this->assertInstanceOf('GrahamCampbell\Tests\Manager\FooClass', $return);
 
-        $this->assertEquals($return->getName(), 'foo');
+        $this->assertSame('foo', $return->getName());
 
-        $this->assertEquals($return->getDriver(), 'hello');
+        $this->assertSame('hello', $return->getDriver());
 
         $this->assertArrayHasKey('foo', $manager->getConnections());
     }
@@ -179,15 +177,15 @@ class AbstractManagerTest extends AbstractTestCase
             return new BarClass($config['name'], $config['driver']);
         });
 
-        $this->assertEquals($manager->getConnections(), array());
+        $this->assertSame(array(), $manager->getConnections());
 
         $return = $manager->connection('qwerty');
 
         $this->assertInstanceOf('GrahamCampbell\Tests\Manager\BarClass', $return);
 
-        $this->assertEquals($return->getName(), 'qwerty');
+        $this->assertSame('qwerty', $return->getName());
 
-        $this->assertEquals($return->getDriver(), 'bar');
+        $this->assertSame('bar', $return->getDriver());
 
         $this->assertArrayHasKey('qwerty', $manager->getConnections());
     }
@@ -204,11 +202,11 @@ class AbstractManagerTest extends AbstractTestCase
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/manager::connections')->andReturn(array('example' => $config));
 
-        $this->assertEquals($manager->getConnections(), array());
+        $this->assertSame(array(), $manager->getConnections());
 
         $return = $manager->getName();
 
-        $this->assertEquals($return, 'example');
+        $this->assertSame('example', $return);
 
         $this->assertArrayHasKey('example', $manager->getConnections());
     }
