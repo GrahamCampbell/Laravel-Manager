@@ -16,7 +16,7 @@
 
 namespace GrahamCampbell\Manager;
 
-use Illuminate\Contracts\Config\Config;
+use Illuminate\Contracts\Config\Repository;
 
 /**
  * This is the abstract manager class.
@@ -30,7 +30,7 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * The config instance.
      *
-     * @var \Illuminate\Contracts\Config\Config
+     * @var \Illuminate\Contracts\Config\Repository
      */
     protected $config;
 
@@ -51,11 +51,11 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Create a new manager manager instance.
      *
-     * @param \Illuminate\Contracts\Config\Config $config
+     * @param \Illuminate\Contracts\Config\Repository $config
      *
      * @return void
      */
-    public function __construct(Config $config)
+    public function __construct(Repository $config)
     {
         $this->config = $config;
     }
@@ -220,7 +220,7 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Get the config instance.
      *
-     * @return \Illuminate\Contracts\Config\Config
+     * @return \Illuminate\Contracts\Config\Repository
      */
     public function getConfig()
     {

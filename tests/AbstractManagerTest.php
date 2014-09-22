@@ -213,7 +213,7 @@ class AbstractManagerTest extends AbstractTestCase
 
     protected function getManager()
     {
-        $repo = Mockery::mock('Illuminate\Contracts\Config\Config');
+        $repo = Mockery::mock('Illuminate\Contracts\Config\Repository');
 
         return new ExampleManager($repo);
     }
