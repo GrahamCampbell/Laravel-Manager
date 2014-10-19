@@ -16,9 +16,9 @@
 
 namespace GrahamCampbell\Tests\Manager;
 
-use Mockery;
 use GrahamCampbell\Manager\AbstractManager;
 use GrahamCampbell\TestBench\AbstractTestCase;
+use Mockery;
 
 /**
  * This is the abstract manager test class.

@@ -1,22 +1,17 @@
 Laravel Manager
 ===============
 
-
-[![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Manager/master.svg?style=flat-square)](https://travis-ci.org/GrahamCampbell/Laravel-Manager)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Manager.svg?style=flat-square)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Manager/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Manager.svg?style=flat-square)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Manager)
-[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Manager.svg?style=flat-square)](https://github.com/GrahamCampbell/Laravel-Manager/releases)
-
-
-### Looking for a laravel 5 compatable version?
-
-Checkout the [master branch](https://github.com/GrahamCampbell/Laravel-Manager/tree/master), installable by requiring `"graham-campbell/manager": "~2.0"`.
-
-
-## Introduction
-
 Laravel Manager was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some manager functionality for [Laravel 4.1/4.2](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Manager/releases), [license](LICENSE.md), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+
+![Laravel Manager](https://cloud.githubusercontent.com/assets/2829600/4432297/c123d7b2-468c-11e4-80a3-8d4e4df01c54.PNG)
+
+<p align="center">
+<a href="https://travis-ci.org/GrahamCampbell/Laravel-Manager"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-Manager/master.svg?style=flat-square" alt="Build Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Manager/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Manager.svg?style=flat-square" alt="Coverage Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Manager"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Manager.svg?style=flat-square" alt="Quality Score"></img></a>
+<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
+<a href="https://github.com/GrahamCampbell/Laravel-Manager/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-Manager.svg?style=flat-square" alt="Latest Version"></img></a>
+</p>
 
 
 ## Installation
@@ -26,6 +21,10 @@ Laravel Manager was created by, and is maintained by [Graham Campbell](https://g
 To get the latest version of Laravel Manager, simply require `"graham-campbell/manager": "~1.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 Once Laravel Manager is installed, you can extend or implement the classes in this package to speed up writing Laravel packages further. There are no service providers to register.
+
+#### Looking for a laravel 5 compatable version?
+
+Checkout the [master branch](https://github.com/GrahamCampbell/Laravel-Manager/tree/master), installable by requiring `"graham-campbell/manager": "~2.0"`.
 
 
 ## Configuration
