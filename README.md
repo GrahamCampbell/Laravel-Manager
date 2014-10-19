@@ -66,7 +66,7 @@ The `'getConnections'` method will return an array of all the connections curren
 
 This abstract class implements the `ManagerInterface`. It has two abstract protected methods that must be implemented by extending classes.
 
-The `'createConnection'` method will be called with the specific connection config as the first paramater. It must return a connection instance.
+The `'createConnection'` method will be called with the specific connection config as the first parameter. It must return a connection instance.
 
 The `'getConfigName'` method must return the name of the connection config. This may be `'yourname\yourpackage'` for example.
 
