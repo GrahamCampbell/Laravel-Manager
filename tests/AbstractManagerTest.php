@@ -31,11 +31,11 @@ class AbstractManagerTest extends AbstractTestCase
 {
     public function testConnectionName()
     {
-        $config = array('driver' => 'manager');
+        $config = ['driver' => 'manager'];
 
         $manager = $this->getConfigManager($config);
 
-        $this->assertSame(array(), $manager->getConnections());
+        $this->assertSame([], $manager->getConnections());
 
         $return = $manager->connection('example');
 
@@ -61,19 +61,19 @@ class AbstractManagerTest extends AbstractTestCase
 
         $manager->disconnect('example');
 
-        $this->assertSame(array(), $manager->getConnections());
+        $this->assertSame([], $manager->getConnections());
     }
 
     public function testConnectionNull()
     {
-        $config = array('driver' => 'manager');
+        $config = ['driver' => 'manager'];
 
         $manager = $this->getConfigManager($config);
 
         $manager->getConfig()->shouldReceive('get')->twice()
             ->with('graham-campbell/manager::default')->andReturn('example');
 
-        $this->assertSame(array(), $manager->getConnections());
+        $this->assertSame([], $manager->getConnections());
 
         $return = $manager->connection();
 
@@ -102,7 +102,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $manager->disconnect();
 
-        $this->assertSame(array(), $manager->getConnections());
+        $this->assertSame([], $manager->getConnections());
     }
 
     /**
@@ -112,12 +112,12 @@ class AbstractManagerTest extends AbstractTestCase
     {
         $manager = $this->getManager();
 
-        $config = array('driver' => 'error');
+        $config = ['driver' => 'error'];
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::connections')->andReturn(array('example' => $config));
+            ->with('graham-campbell/manager::connections')->andReturn(['example' => $config]);
 
-        $this->assertSame(array(), $manager->getConnections());
+        $this->assertSame([], $manager->getConnections());
 
         $manager->connection('error');
     }
@@ -147,13 +147,13 @@ class AbstractManagerTest extends AbstractTestCase
         $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::connections')->andReturn(array('foo' => array('driver' => 'hello')));
+            ->with('graham-campbell/manager::connections')->andReturn(['foo' => ['driver' => 'hello']]);
 
         $manager->extend('foo', function (array $config) {
             return new FooClass($config['name'], $config['driver']);
         });
 
-        $this->assertSame(array(), $manager->getConnections());
+        $this->assertSame([], $manager->getConnections());
 
         $return = $manager->connection('foo');
 
@@ -171,13 +171,13 @@ class AbstractManagerTest extends AbstractTestCase
         $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::connections')->andReturn(array('qwerty' => array('driver' => 'bar')));
+            ->with('graham-campbell/manager::connections')->andReturn(['qwerty' => ['driver' => 'bar']]);
 
         $manager->extend('bar', function (array $config) {
             return new BarClass($config['name'], $config['driver']);
         });
 
-        $this->assertSame(array(), $manager->getConnections());
+        $this->assertSame([], $manager->getConnections());
 
         $return = $manager->connection('qwerty');
 
@@ -192,7 +192,7 @@ class AbstractManagerTest extends AbstractTestCase
 
     public function testCall()
     {
-        $config = array('driver' => 'manager');
+        $config = ['driver' => 'manager'];
 
         $manager = $this->getManager();
 
@@ -200,9 +200,9 @@ class AbstractManagerTest extends AbstractTestCase
             ->with('graham-campbell/manager::default')->andReturn('example');
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::connections')->andReturn(array('example' => $config));
+            ->with('graham-campbell/manager::connections')->andReturn(['example' => $config]);
 
-        $this->assertSame(array(), $manager->getConnections());
+        $this->assertSame([], $manager->getConnections());
 
         $return = $manager->getName();
 
@@ -223,7 +223,7 @@ class AbstractManagerTest extends AbstractTestCase
         $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->twice()
-            ->with('graham-campbell/manager::connections')->andReturn(array('example' => $config));
+            ->with('graham-campbell/manager::connections')->andReturn(['example' => $config]);
 
         return $manager;
     }
