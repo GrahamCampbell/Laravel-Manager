@@ -39,14 +39,14 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @var array
      */
-    protected $connections = array();
+    protected $connections = [];
 
     /**
      * The custom connection resolvers.
      *
      * @var array
      */
-    protected $extensions = array();
+    protected $extensions = [];
 
     /**
      * Create a new manager manager instance.
@@ -237,6 +237,6 @@ abstract class AbstractManager implements ManagerInterface
      */
     public function __call($method, $parameters)
     {
-        return call_user_func_array(array($this->connection(), $method), $parameters);
+        return call_user_func_array([$this->connection(), $method], $parameters);
     }
 }
