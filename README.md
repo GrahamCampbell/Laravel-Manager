@@ -1,7 +1,7 @@
 Laravel Manager
 ===============
 
-Laravel Manager was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some manager functionality for [Laravel 4.1/4.2](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Manager/releases), [license](LICENSE.md), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+Laravel Manager was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some manager functionality for [Laravel 4.1/4.2](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Manager/releases), [license](LICENSE), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
 
 ![Laravel Manager](https://cloud.githubusercontent.com/assets/2829600/4432297/c123d7b2-468c-11e4-80a3-8d4e4df01c54.PNG)
 
@@ -9,7 +9,7 @@ Laravel Manager was created by, and is maintained by [Graham Campbell](https://g
 <a href="https://travis-ci.org/GrahamCampbell/Laravel-Manager"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-Manager/master.svg?style=flat-square" alt="Build Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Manager/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Manager.svg?style=flat-square" alt="Coverage Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Manager"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Manager.svg?style=flat-square" alt="Quality Score"></img></a>
-<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
 <a href="https://github.com/GrahamCampbell/Laravel-Manager/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-Manager.svg?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
@@ -89,18 +89,4 @@ You may see an example of implementation in [Laravel Flysystem](https://github.c
 
 ## License
 
-Apache License
-
-Copyright 2014 Graham Campbell
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Laravel Manager is licensed under [The MIT License (MIT)](LICENSE).
