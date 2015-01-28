@@ -12,6 +12,7 @@
 namespace GrahamCampbell\Manager;
 
 use Illuminate\Contracts\Config\Repository;
+use InvalidArgumentException;
 
 /**
  * This is the abstract manager class.
@@ -154,10 +155,10 @@ abstract class AbstractManager implements ManagerInterface
     {
         $name = $name ?: $this->getDefaultConnection();
 
-        $connections = $this->config->get($this->getConfigName().'::connections');
+        $connections = $this->config->get($this->getConfigName().'.connections');
 
         if (!is_array($config = array_get($connections, $name)) && !$config) {
-            throw new \InvalidArgumentException("Connection [$name] not configured.");
+            throw new InvalidArgumentException("Connection [$name] not configured.");
         }
 
         $config['name'] = $name;
@@ -172,7 +173,7 @@ abstract class AbstractManager implements ManagerInterface
      */
     public function getDefaultConnection()
     {
-        return $this->config->get($this->getConfigName().'::default');
+        return $this->config->get($this->getConfigName().'.default');
     }
 
     /**
@@ -184,7 +185,7 @@ abstract class AbstractManager implements ManagerInterface
      */
     public function setDefaultConnection($name)
     {
-        $this->config->set($this->getConfigName().'::default', $name);
+        $this->config->set($this->getConfigName().'.default', $name);
     }
 
     /**

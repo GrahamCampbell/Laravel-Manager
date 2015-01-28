@@ -64,7 +64,7 @@ class AbstractManagerTest extends AbstractTestCase
         $manager = $this->getConfigManager($config);
 
         $manager->getConfig()->shouldReceive('get')->twice()
-            ->with('graham-campbell/manager::default')->andReturn('example');
+            ->with('manager.default')->andReturn('example');
 
         $this->assertSame([], $manager->getConnections());
 
@@ -91,7 +91,7 @@ class AbstractManagerTest extends AbstractTestCase
         $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::default')->andReturn('example');
+            ->with('manager.default')->andReturn('example');
 
         $manager->disconnect();
 
@@ -108,7 +108,7 @@ class AbstractManagerTest extends AbstractTestCase
         $config = ['driver' => 'error'];
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::connections')->andReturn(['example' => $config]);
+            ->with('manager.connections')->andReturn(['example' => $config]);
 
         $this->assertSame([], $manager->getConnections());
 
@@ -120,17 +120,17 @@ class AbstractManagerTest extends AbstractTestCase
         $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::default')->andReturn('example');
+            ->with('manager.default')->andReturn('example');
 
         $this->assertSame('example', $manager->getDefaultConnection());
 
         $manager->getConfig()->shouldReceive('set')->once()
-            ->with('graham-campbell/manager::default', 'new');
+            ->with('manager.default', 'new');
 
         $manager->setDefaultConnection('new');
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::default')->andReturn('new');
+            ->with('manager.default')->andReturn('new');
 
         $this->assertSame('new', $manager->getDefaultConnection());
     }
@@ -140,7 +140,7 @@ class AbstractManagerTest extends AbstractTestCase
         $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::connections')->andReturn(['foo' => ['driver' => 'hello']]);
+            ->with('manager.connections')->andReturn(['foo' => ['driver' => 'hello']]);
 
         $manager->extend('foo', function (array $config) {
             return new FooClass($config['name'], $config['driver']);
@@ -164,7 +164,7 @@ class AbstractManagerTest extends AbstractTestCase
         $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::connections')->andReturn(['qwerty' => ['driver' => 'bar']]);
+            ->with('manager.connections')->andReturn(['qwerty' => ['driver' => 'bar']]);
 
         $manager->extend('bar', function (array $config) {
             return new BarClass($config['name'], $config['driver']);
@@ -190,10 +190,10 @@ class AbstractManagerTest extends AbstractTestCase
         $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::default')->andReturn('example');
+            ->with('manager.default')->andReturn('example');
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/manager::connections')->andReturn(['example' => $config]);
+            ->with('manager.connections')->andReturn(['example' => $config]);
 
         $this->assertSame([], $manager->getConnections());
 
@@ -216,7 +216,7 @@ class AbstractManagerTest extends AbstractTestCase
         $manager = $this->getManager();
 
         $manager->getConfig()->shouldReceive('get')->twice()
-            ->with('graham-campbell/manager::connections')->andReturn(['example' => $config]);
+            ->with('manager.connections')->andReturn(['example' => $config]);
 
         return $manager;
     }
@@ -243,7 +243,7 @@ class ExampleManager extends AbstractManager
      */
     protected function getConfigName()
     {
-        return 'graham-campbell/manager';
+        return 'manager';
     }
 }
 
