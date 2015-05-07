@@ -11,8 +11,8 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "illuminate/contracts": "5.0.*",
-        "illuminate/support": "5.0.*"
+        "illuminate/contracts": "5.0.*|5.1.*",
+        "illuminate/support": "5.0.*|5.1.*"
     },
     "require-dev": {
         "graham-campbell/testbench": "~1.0"
