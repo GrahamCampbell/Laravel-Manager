@@ -28,10 +28,6 @@ You'll then need to run `composer install` or `composer update` to download it a
 
 Once Laravel Manager is installed, you can extend or implement the classes in this package to speed up writing Laravel packages further. There are no service providers to register.
 
-#### Looking for a laravel 4 compatable version?
-
-Checkout the [1.0 branch](https://github.com/GrahamCampbell/Laravel-Manager/tree/1.0), installable by requiring `"graham-campbell/manager": "~1.0"`.
-
 
 ## Configuration
 
