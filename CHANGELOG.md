@@ -4,7 +4,8 @@ CHANGE LOG
 
 ## V2.2 (Upcoming)
 
-* Lumen support
+* Official lumen support
+* Code cleanup
 
 
 ## V2.1 (07/05/2015)

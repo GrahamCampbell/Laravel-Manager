@@ -12,16 +12,20 @@
 namespace GrahamCampbell\Tests\Manager;
 
 use GrahamCampbell\Manager\AbstractManager;
-use GrahamCampbell\TestBench\AbstractTestCase;
+use GrahamCampbell\TestBenchCore\MockeryTrait;
+use Illuminate\Contracts\Config\Repository;
 use Mockery;
+use PHPUnit_Framework_TestCase as TestCase;
 
 /**
  * This is the abstract manager test class.
  *
  * @author Graham Campbell <graham@cachethq.io>
  */
-class AbstractManagerTest extends AbstractTestCase
+class AbstractManagerTest extends TestCase
 {
+    use MockeryTrait;
+
     public function testConnectionName()
     {
         $config = ['driver' => 'manager'];
@@ -32,7 +36,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->connection('example');
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
+        $this->assertInstanceOf(ExampleClass::class, $return);
 
         $this->assertSame('example', $return->getName());
 
@@ -42,7 +46,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->reconnect('example');
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
+        $this->assertInstanceOf(ExampleClass::class, $return);
 
         $this->assertSame('example', $return->getName());
 
@@ -70,7 +74,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->connection();
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
+        $this->assertInstanceOf(ExampleClass::class, $return);
 
         $this->assertSame('example', $return->getName());
 
@@ -80,7 +84,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->reconnect();
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\ExampleClass', $return);
+        $this->assertInstanceOf(ExampleClass::class, $return);
 
         $this->assertSame('example', $return->getName());
 
@@ -150,7 +154,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->connection('foo');
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\FooClass', $return);
+        $this->assertInstanceOf(FooClass::class, $return);
 
         $this->assertSame('foo', $return->getName());
 
@@ -174,7 +178,7 @@ class AbstractManagerTest extends AbstractTestCase
 
         $return = $manager->connection('qwerty');
 
-        $this->assertInstanceOf('GrahamCampbell\Tests\Manager\BarClass', $return);
+        $this->assertInstanceOf(BarClass::class, $return);
 
         $this->assertSame('qwerty', $return->getName());
 
@@ -206,7 +210,7 @@ class AbstractManagerTest extends AbstractTestCase
 
     protected function getManager()
     {
-        $repo = Mockery::mock('Illuminate\Contracts\Config\Repository');
+        $repo = Mockery::mock(Repository::class);
 
         return new ExampleManager($repo);
     }
