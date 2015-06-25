@@ -29,6 +29,9 @@
             "GrahamCampbell\\Tests\\Manager\\": "tests/"
         }
     },
+    "config": {
+        "preferred-install": "dist"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "2.2-dev"
