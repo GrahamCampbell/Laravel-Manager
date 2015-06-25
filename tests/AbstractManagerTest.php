@@ -104,6 +104,7 @@ class AbstractManagerTest extends TestCase
 
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Connection [error] not configured.
      */
     public function testConnectionError()
     {
