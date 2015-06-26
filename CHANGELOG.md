@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V2.2 (Upcoming)
+## V2.2 (26/06/2015)
 
 * Official lumen support
 * Code cleanup
