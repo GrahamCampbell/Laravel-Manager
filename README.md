@@ -81,6 +81,11 @@ For a simple example of a manager class implementing these methods, see my [Drop
 You may see an example of implementation in [Laravel Flysystem](https://github.com/GrahamCampbell/Laravel-Flysystem), [Laravel Dropbox](https://github.com/GrahamCampbell/Laravel-Dropbox), [Laravel DigitalOcean](https://github.com/GrahamCampbell/Laravel-DigitalOcean), and [Laravel GitHub](https://github.com/GrahamCampbell/Laravel-GitHub).
 
 
+## Security
+
+If you discover a security vulnerability within this package, please send an e-mail to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed.
+
+
 ## License
 
 Laravel Manager is licensed under [The MIT License (MIT)](LICENSE).
