@@ -43,7 +43,7 @@ abstract class AbstractManager implements ManagerInterface
     protected $extensions = [];
 
     /**
-     * Create a new manager manager instance.
+     * Create a new manager instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
      *
