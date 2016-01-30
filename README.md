@@ -6,6 +6,7 @@ Laravel Manager was created by, and is maintained by [Graham Campbell](https://g
 ![Laravel Manager](https://cloud.githubusercontent.com/assets/2829600/4432296/c122a676-468c-11e4-98c1-ba67fc40b641.PNG)
 
 <p align="center">
+<a href="https://styleci.io/repos/19836262"><img src="https://styleci.io/repos/19836262/shield" alt="StyleCI Status"></img></a>
 <a href="https://travis-ci.org/GrahamCampbell/Laravel-Manager"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-Manager/master.svg?style=flat-square" alt="Build Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Manager/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Manager.svg?style=flat-square" alt="Coverage Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Manager"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Manager.svg?style=flat-square" alt="Quality Score"></img></a>
