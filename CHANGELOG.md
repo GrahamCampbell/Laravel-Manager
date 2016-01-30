@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V2.3.1 (30/01/2016)
+
+* Fixed some typos
+
+
 ## V2.3 (14/11/2015)
 
 * Added laravel 5.2 support
