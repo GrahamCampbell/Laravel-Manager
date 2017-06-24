@@ -17,25 +17,15 @@ Laravel Manager was created by, and is maintained by [Graham Campbell](https://g
 
 ## Installation
 
-Either [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+ are required.
+Laravel Manager requires [PHP](https://php.net) 5.5+. This particular version supports Laravel 5.1, 5.2, 5.3, or 5.4 only.
 
-To get the latest version of Laravel Manager, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer require graham-campbell/manager
 ```
 
-Instead, you may of course manually update your require block and run `composer update` if you so choose:
-
-```json
-{
-    "require": {
-        "graham-campbell/manager": "^2.0"
-    }
-}
-```
-
-Once Laravel Manager is installed, you can extend or implement the classes in this package to speed up writing Laravel packages further. There are no service providers to register.
+Once installed, you can extend or implement the classes in this package to speed up writing Laravel packages further. There are no service providers to register.
 
 
 ## Configuration
