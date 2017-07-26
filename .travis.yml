@@ -29,7 +29,9 @@ matrix:
     - php: 7.2
       env: LARAVEL_VERSION=5.4.*
 
-install: travis_retry composer install --no-suggest --prefer-dist -n -o
+install:
+  - composer require "laravel/framework:${LARAVEL_VERSION}" --no-update -n
+  - travis_retry composer install --no-suggest --prefer-dist -n -o
 
 script:
   - if [ "$TRAVIS_PHP_VERSION" != "7.0" ]; then vendor/bin/phpunit; fi
