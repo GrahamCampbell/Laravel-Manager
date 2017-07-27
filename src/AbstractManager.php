@@ -57,11 +57,11 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Get a connection instance.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return object
      */
-    public function connection($name = null)
+    public function connection(string $name = null)
     {
         $name = $name ?: $this->getDefaultConnection();
 
@@ -75,11 +75,11 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Reconnect to the given connection.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return object
      */
-    public function reconnect($name = null)
+    public function reconnect(string $name = null)
     {
         $name = $name ?: $this->getDefaultConnection();
 
@@ -91,11 +91,11 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Disconnect from the given connection.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @return void
      */
-    public function disconnect($name = null)
+    public function disconnect(string $name = null)
     {
         $name = $name ?: $this->getDefaultConnection();
 
@@ -118,7 +118,7 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @return mixed
      */
-    protected function makeConnection($name)
+    protected function makeConnection(string $name)
     {
         $config = $this->getConnectionConfig($name);
 
@@ -145,13 +145,13 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Get the configuration for a connection.
      *
-     * @param string $name
+     * @param string|null $name
      *
      * @throws \InvalidArgumentException
      *
      * @return array
      */
-    public function getConnectionConfig($name)
+    public function getConnectionConfig(string $name = null)
     {
         $name = $name ?: $this->getDefaultConnection();
 
@@ -183,7 +183,7 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @return void
      */
-    public function setDefaultConnection($name)
+    public function setDefaultConnection(string $name)
     {
         $this->config->set($this->getConfigName().'.default', $name);
     }
@@ -196,7 +196,7 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @return void
      */
-    public function extend($name, $resolver)
+    public function extend(string $name, callable $resolver)
     {
         $this->extensions[$name] = $resolver;
     }
