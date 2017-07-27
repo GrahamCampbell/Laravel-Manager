@@ -123,12 +123,12 @@ abstract class AbstractManager implements ManagerInterface
         $config = $this->getConnectionConfig($name);
 
         if (isset($this->extensions[$name])) {
-            return call_user_func($this->extensions[$name], $config);
+            return $this->extensions[$name]->$config();
         }
 
         if ($driver = array_get($config, 'driver')) {
             if (isset($this->extensions[$driver])) {
-                return call_user_func($this->extensions[$driver], $config);
+                return $this->extensions[$driver]->$config();
             }
         }
 
@@ -229,8 +229,8 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @return mixed
      */
-    public function __call($method, $parameters)
+    public function __call(string $method, array $parameters)
     {
-        return call_user_func_array([$this->connection(), $method], $parameters);
+        return $this->$this->connection()->{$method}(...$parameters);
     }
 }
