@@ -15,7 +15,7 @@ use GrahamCampbell\Manager\AbstractManager;
 use GrahamCampbell\TestBenchCore\MockeryTrait;
 use Illuminate\Contracts\Config\Repository;
 use Mockery;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * This is the abstract manager test class.
