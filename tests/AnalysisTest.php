@@ -25,6 +25,11 @@ class AnalysisTest extends TestCase
 {
     use AnalysisTrait;
 
+    /**
+     * Get the code paths to analyze.
+     *
+     * @return string[]
+     */
     protected function getPaths()
     {
         return [
