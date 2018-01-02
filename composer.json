@@ -16,7 +16,7 @@
     },
     "require-dev": {
         "graham-campbell/analyzer": "^2.0",
-        "graham-campbell/testbench-core": "^2.0",
+        "graham-campbell/testbench-core": "^3.0",
         "mockery/mockery": "^1.0",
         "phpunit/phpunit": "^6.5"
     },
