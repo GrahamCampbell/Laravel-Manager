@@ -231,7 +231,7 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @return mixed
      */
-    public function __call(string $method, array $parameters)
+    public function __call($method, array $parameters)
     {
         return $this->connection()->$method(...$parameters);
     }
