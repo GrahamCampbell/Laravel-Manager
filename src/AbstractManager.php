@@ -34,14 +34,14 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * The active connection instances.
      *
-     * @var array
+     * @var object[]
      */
     protected $connections = [];
 
     /**
      * The custom connection resolvers.
      *
-     * @var array
+     * @var callable[]
      */
     protected $extensions = [];
 
