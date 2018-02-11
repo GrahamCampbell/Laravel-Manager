@@ -109,7 +109,7 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @param array $config
      *
-     * @return mixed
+     * @return object
      */
     abstract protected function createConnection(array $config);
 
@@ -118,7 +118,7 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @param string $name
      *
-     * @return mixed
+     * @return object
      */
     protected function makeConnection(string $name)
     {
