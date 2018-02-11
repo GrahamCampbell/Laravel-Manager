@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\Manager;
 
+use Closure;
 use Illuminate\Contracts\Config\Repository;
 use InvalidArgumentException;
 
@@ -200,7 +201,11 @@ abstract class AbstractManager implements ManagerInterface
      */
     public function extend(string $name, callable $resolver)
     {
-        $this->extensions[$name] = $resolver;
+        if ($resolver instanceof Closure) {
+            $this->extensions[$name] = $resolver->bindTo($this, $this);
+        } else {
+            $this->extensions[$name] = $resolver;
+        }
     }
 
     /**
