@@ -2,6 +2,14 @@ CHANGE LOG
 ==========
 
 
+## V4.0 (11/02/2018)
+
+* Support PHP 7.1 or 7.2
+* Support Laravel 5.5 or 5.6
+* Bind extension resolvers to the manager
+* Updated phpdoc to reflect connections being objects
+
+
 ## V3.0 (06/08/2017)
 
 * Support PHP 7.0, 7.1, 7.2
