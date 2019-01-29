@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.2 (29/01/2019)
+
+* Added Laravel 5.8 support
+
+
 ## V4.1 (23/08/2018)
 
 * Added Laravel 5.7 support
