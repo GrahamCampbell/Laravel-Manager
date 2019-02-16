@@ -16,6 +16,7 @@ namespace GrahamCampbell\Tests\Manager;
 use GrahamCampbell\Manager\AbstractManager;
 use GrahamCampbell\TestBenchCore\MockeryTrait;
 use Illuminate\Contracts\Config\Repository;
+use InvalidArgumentException;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 
@@ -104,10 +105,6 @@ class AbstractManagerTest extends TestCase
         $this->assertSame([], $manager->getConnections());
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Connection [error] not configured.
-     */
     public function testConnectionError()
     {
         $manager = $this->getManager();
@@ -118,6 +115,9 @@ class AbstractManagerTest extends TestCase
             ->with('manager.connections')->andReturn(['example' => $config]);
 
         $this->assertSame([], $manager->getConnections());
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Connection [error] not configured.');
 
         $manager->connection('error');
     }
