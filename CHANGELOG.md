@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.2.1 (16/02/2019)
+
+* Fixes for PHPUnit 8
+
+
 ## V4.2 (29/01/2019)
 
 * Added Laravel 5.8 support
