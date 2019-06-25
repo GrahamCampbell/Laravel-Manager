@@ -1,7 +1,7 @@
 Laravel Manager
 ===============
 
-Laravel Manager was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some manager functionality for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Manager/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md).
+Laravel Manager was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some manager functionality for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Manager/releases), [security policy](https://github.com/GrahamCampbell/Laravel-Manager/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
 
 ![Laravel Manager](https://cloud.githubusercontent.com/assets/2829600/4432296/c122a676-468c-11e4-98c1-ba67fc40b641.PNG)
 
@@ -80,7 +80,7 @@ You may see an example of implementation in [Laravel Flysystem](https://github.c
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an email to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Laravel-Manager/security/policy).
 
 
 ## License
