@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.2.2 (30/06/2019)
+
+* Avoid calling deprecated code
+
+
 ## V4.2.1 (16/02/2019)
 
 * Fixes for PHPUnit 8
