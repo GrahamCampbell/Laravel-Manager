@@ -15,6 +15,7 @@ namespace GrahamCampbell\Manager;
 
 use Closure;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Support\Arr;
 use InvalidArgumentException;
 
 /**
@@ -129,7 +130,7 @@ abstract class AbstractManager implements ManagerInterface
             return $this->extensions[$name]($config);
         }
 
-        if ($driver = array_get($config, 'driver')) {
+        if ($driver = Arr::get($config, 'driver')) {
             if (isset($this->extensions[$driver])) {
                 return $this->extensions[$driver]($config);
             }
@@ -160,7 +161,7 @@ abstract class AbstractManager implements ManagerInterface
 
         $connections = $this->config->get($this->getConfigName().'.connections');
 
-        if (!is_array($config = array_get($connections, $name)) && !$config) {
+        if (!is_array($config = Arr::get($connections, $name)) && !$config) {
             throw new InvalidArgumentException("Connection [$name] not configured.");
         }
 
