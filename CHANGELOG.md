@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.3 (26/08/2019)
+
+* Added Laravel 6 support
+
+
 ## V4.2.2 (30/06/2019)
 
 * Avoid calling deprecated code
