@@ -3,7 +3,7 @@ Laravel Manager
 
 Laravel Manager was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some manager functionality for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Manager/releases), [security policy](https://github.com/GrahamCampbell/Laravel-Manager/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
 
-![Laravel Manager](https://cloud.githubusercontent.com/assets/2829600/4432296/c122a676-468c-11e4-98c1-ba67fc40b641.PNG)
+![Banner](https://user-images.githubusercontent.com/2829600/71477504-680d0f80-27e2-11ea-9acd-befa0b3e3a8f.png)
 
 <p align="center">
 <a href="https://styleci.io/repos/19836262"><img src="https://styleci.io/repos/19836262/shield" alt="StyleCI Status"></img></a>
