@@ -17,7 +17,7 @@ Laravel Manager was created by, and is maintained by [Graham Campbell](https://g
 
 ## Installation
 
-Laravel Manager requires [PHP](https://php.net) 7.1-7.4. This particular version supports Laravel 5.5-5.8 and 6 only.
+Laravel Manager requires [PHP](https://php.net) 7.1-7.4. This particular version supports Laravel 5.5-7.
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
