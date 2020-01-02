@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.4.1 (02/01/2020)
+
+* Tweaked getConnections() phpdoc
+
+
 ## V4.4 (28/12/2019)
 
 * Added Laravel 7 support
