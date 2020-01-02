@@ -35,14 +35,14 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * The active connection instances.
      *
-     * @var object[]
+     * @var array<string,object>
      */
     protected $connections = [];
 
     /**
      * The custom connection resolvers.
      *
-     * @var callable[]
+     * @var array<string,callable>
      */
     protected $extensions = [];
 
@@ -212,7 +212,7 @@ abstract class AbstractManager implements ManagerInterface
     /**
      * Return all of the created connections.
      *
-     * @return object[]
+     * @return array<string,object>
      */
     public function getConnections()
     {
