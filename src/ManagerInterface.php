@@ -85,7 +85,7 @@ interface ManagerInterface
     /**
      * Return all of the created connections.
      *
-     * @return object[]
+     * @return array<string,object>
      */
     public function getConnections();
 }
