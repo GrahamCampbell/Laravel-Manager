@@ -190,6 +190,28 @@ class AbstractManagerTest extends TestCase
         $this->assertArrayHasKey('qwerty', $manager->getConnections());
     }
 
+    public function testExtendDriverCallable()
+    {
+        $manager = $this->getManager();
+
+        $manager->getConfig()->shouldReceive('get')->once()
+            ->with('manager.connections')->andReturn(['qwerty' => ['driver' => 'bar']]);
+
+        $manager->extend('bar', [BarFactory::class, 'create']);
+
+        $this->assertSame([], $manager->getConnections());
+
+        $return = $manager->connection('qwerty');
+
+        $this->assertInstanceOf(BarClass::class, $return);
+
+        $this->assertSame('qwerty', $return->getName());
+
+        $this->assertSame('bar', $return->getDriver());
+
+        $this->assertArrayHasKey('qwerty', $manager->getConnections());
+    }
+
     public function testCall()
     {
         $config = ['driver' => 'manager'];
@@ -289,4 +311,12 @@ class FooClass extends AbstractClass
 class BarClass extends AbstractClass
 {
     //
+}
+
+class BarFactory
+{
+    public static function create(array $config)
+    {
+        return new BarClass($config['name'], $config['driver']);
+    }
 }
