@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.5 (Upcoming)
+
+* Added getNamedConfig method
+
+
 ## V4.4.1 (02/01/2020)
 
 * Tweaked getConnections() phpdoc

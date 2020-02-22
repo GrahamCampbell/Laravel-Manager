@@ -159,10 +159,26 @@ abstract class AbstractManager implements ManagerInterface
     {
         $name = $name ?: $this->getDefaultConnection();
 
-        $connections = $this->config->get($this->getConfigName().'.connections');
+        return $this->getNamedConfig('connections', 'Connection', $name);
+    }
 
-        if (!is_array($config = Arr::get($connections, $name)) && !$config) {
-            throw new InvalidArgumentException("Connection [$name] not configured.");
+    /**
+     * Get the given named configuration.
+     *
+     * @param string $type
+     * @param string $desc
+     * @param string $name
+     *
+     * @throws \InvalidArgumentException
+     *
+     * @return array
+     */
+    protected function getNamedConfig(string $type, string $desc, string $name)
+    {
+        $data = $this->config->get($this->getConfigName().'.'.$type);
+
+        if (!is_array($config = Arr::get($data, $name)) && !$config) {
+            throw new InvalidArgumentException("$desc [$name] not configured.");
         }
 
         $config['name'] = $name;
