@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.5.1 (01/03/2020)
+
+* Miscellaneous tweaks
+
+
 ## V4.5 (22/02/2020)
 
 * Added getNamedConfig method
