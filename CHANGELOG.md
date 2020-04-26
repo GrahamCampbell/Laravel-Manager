@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.5.3 (26/04/2020)
+
+* Added missing throws doc
+
+
 ## V4.5.2 (14/04/2020)
 
 * Updated funding information
