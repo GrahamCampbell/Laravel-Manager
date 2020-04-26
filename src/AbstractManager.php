@@ -63,6 +63,8 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @param string|null $name
      *
+     * @throws \InvalidArgumentException
+     *
      * @return object
      */
     public function connection(string $name = null)
@@ -80,6 +82,8 @@ abstract class AbstractManager implements ManagerInterface
      * Reconnect to the given connection.
      *
      * @param string|null $name
+     *
+     * @throws \InvalidArgumentException
      *
      * @return object
      */
@@ -111,6 +115,8 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @param array $config
      *
+     * @throws \InvalidArgumentException
+     *
      * @return object
      */
     abstract protected function createConnection(array $config);
@@ -119,6 +125,8 @@ abstract class AbstractManager implements ManagerInterface
      * Make the connection instance.
      *
      * @param string $name
+     *
+     * @throws \InvalidArgumentException
      *
      * @return object
      */
