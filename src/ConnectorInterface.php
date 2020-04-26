@@ -25,6 +25,8 @@ interface ConnectorInterface
      *
      * @param array $config
      *
+     * @throws \InvalidArgumentException
+     *
      * @return object
      */
     public function connect(array $config);
