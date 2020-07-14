@@ -22,12 +22,12 @@ Laravel Manager requires [PHP](https://php.net) 7.1-7.4. This particular version
 |---------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
 | 2.5     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
 | 3.0     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 4.4     | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 4.5     | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require graham-campbell/manager:^4.4
+$ composer require graham-campbell/manager:^4.5
 ```
 
 Once installed, you can extend or implement the classes in this package to speed up writing Laravel packages further. There are no service providers to register.
