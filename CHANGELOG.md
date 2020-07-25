@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V4.6 (UPCOMING)
+
+* Provisional PHP 8.0 support
+* Provisional Laravel 8 support
+
+
 ## V4.5.3 (26/04/2020)
 
 * Added missing throws doc
