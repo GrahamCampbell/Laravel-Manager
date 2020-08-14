@@ -50,7 +50,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:5.5.*" "phpunit/phpunit:^6.5" --no-update --no-interaction
+          command: composer require "laravel/framework:5.5.*" "phpunit/phpunit:^6.5.14" --no-update --no-interaction
         if: "matrix.laravel == '5.5'"
 
       - name: Select Laravel 5.6
@@ -58,7 +58,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:5.6.*" "phpunit/phpunit:^7.5" --no-update --no-interaction
+          command: composer require "laravel/framework:5.6.*" "phpunit/phpunit:^7.5.20" --no-update --no-interaction
         if: "matrix.laravel == '5.6'"
 
       - name: Select Laravel 5.7
@@ -66,7 +66,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:5.7.*" "phpunit/phpunit:^7.5" --no-update --no-interaction
+          command: composer require "laravel/framework:5.7.*" "phpunit/phpunit:^7.5.20" --no-update --no-interaction
         if: "matrix.laravel == '5.7'"
 
       - name: Select Laravel 5.8
@@ -74,7 +74,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:5.8.*" "phpunit/phpunit:^7.5|^8.5" --no-update --no-interaction
+          command: composer require "laravel/framework:5.8.*" "phpunit/phpunit:^7.5.20|^8.5.8" --no-update --no-interaction
         if: "matrix.laravel == '5.8'"
 
       - name: Select Laravel 6
@@ -82,7 +82,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:6.*" "phpunit/phpunit:^8.5|^9.0" --no-update --no-interaction
+          command: composer require "laravel/framework:6.*" "phpunit/phpunit:^8.5.8|^9.3.7" --no-update --no-interaction
         if: "matrix.laravel == '6'"
 
       - name: Select Laravel 7
@@ -90,7 +90,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:7.*" "phpunit/phpunit:^8.5|^9.0" --no-update --no-interaction
+          command: composer require "laravel/framework:7.*" "phpunit/phpunit:^8.5.8|^9.3.7" --no-update --no-interaction
         if: "matrix.laravel == '7'"
 
       - name: Select Laravel 8
@@ -98,7 +98,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:8.*" "phpunit/phpunit:^9.3" --no-update --no-interaction
+          command: composer require "laravel/framework:8.*" "phpunit/phpunit:^9.3.7" --no-update --no-interaction
         if: "matrix.laravel == '8'"
 
       - name: Install PHP 7 Dependencies
