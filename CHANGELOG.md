@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V4.6.1 (21/11/2021)
+
+* Provisional PHP 8.1 support
+* Updated package metadata
+
+
 ## V4.6 (25/07/2020)
 
 * Provisional PHP 8.0 support
