@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V4.7 (UPCOMING)
+## V4.7 (24/01/2022)
 
 * Provisional Laravel 9 support
 
