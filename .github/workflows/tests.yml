@@ -7,7 +7,7 @@ on:
 jobs:
   tests:
     name: PHP ${{ matrix.php }}; Laravel ${{ matrix.laravel }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
@@ -53,7 +53,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -66,7 +66,7 @@ jobs:
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Select Laravel 5.5
-        uses: nick-invision/retry@v1
+        uses: nick-invision/retry@v2
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -74,7 +74,7 @@ jobs:
         if: "matrix.laravel == '5.5'"
 
       - name: Select Laravel 5.6
-        uses: nick-invision/retry@v1
+        uses: nick-invision/retry@v2
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -82,7 +82,7 @@ jobs:
         if: "matrix.laravel == '5.6'"
 
       - name: Select Laravel 5.7
-        uses: nick-invision/retry@v1
+        uses: nick-invision/retry@v2
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -90,7 +90,7 @@ jobs:
         if: "matrix.laravel == '5.7'"
 
       - name: Select Laravel 5.8
-        uses: nick-invision/retry@v1
+        uses: nick-invision/retry@v2
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -98,7 +98,7 @@ jobs:
         if: "matrix.laravel == '5.8'"
 
       - name: Select Laravel 6
-        uses: nick-invision/retry@v1
+        uses: nick-invision/retry@v2
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -106,7 +106,7 @@ jobs:
         if: "matrix.laravel == '6'"
 
       - name: Select Laravel 7
-        uses: nick-invision/retry@v1
+        uses: nick-invision/retry@v2
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -114,7 +114,7 @@ jobs:
         if: "matrix.laravel == '7'"
 
       - name: Select Laravel 8
-        uses: nick-invision/retry@v1
+        uses: nick-invision/retry@v2
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -122,7 +122,7 @@ jobs:
         if: "matrix.laravel == '8'"
 
       - name: Select Laravel 9
-        uses: nick-invision/retry@v1
+        uses: nick-invision/retry@v2
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -130,7 +130,7 @@ jobs:
         if: "matrix.laravel == '9'"
 
       - name: Install PHP Dependencies
-        uses: nick-invision/retry@v1
+        uses: nick-invision/retry@v2
         with:
           timeout_minutes: 5
           max_attempts: 5
