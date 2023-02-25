@@ -6,7 +6,7 @@ Laravel Manager was created by, and is maintained by [Graham Campbell](https://g
 ![Banner](https://user-images.githubusercontent.com/2829600/71477504-680d0f80-27e2-11ea-9acd-befa0b3e3a8f.png)
 
 <p align="center">
-<a href="https://github.com/GrahamCampbell/Laravel-Manager/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Laravel-Manager/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
+<a href="https://github.com/GrahamCampbell/Laravel-Manager/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/actions/workflow/status/GrahamCampbell/Laravel-Manager/tests.yml?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/19836262"><img src="https://github.styleci.io/repos/19836262/shield" alt="StyleCI Status"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
 <a href="https://packagist.org/packages/graham-campbell/manager"><img src="https://img.shields.io/packagist/dt/graham-campbell/manager?style=flat-square" alt="Packagist Downloads"></img></a>
@@ -16,18 +16,17 @@ Laravel Manager was created by, and is maintained by [Graham Campbell](https://g
 
 ## Installation
 
-This version requires [PHP](https://www.php.net/) 7.1-8.1 and supports [Laravel](https://laravel.com/) 5.5-9.
+This version requires [PHP](https://www.php.net/) 7.4-8.2 and supports [Laravel](https://laravel.com/) 8-10.
 
-| Manager | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 | L8                 | L9                 |
-|---------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 2.5     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 3.0     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 4.7     | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Manager | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 | L8                 | L9                 | L10                |
+|---------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 4.7     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |
+| 5.0     | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 
 ```bash
-$ composer require "graham-campbell/manager:^4.7"
+$ composer require "graham-campbell/manager:^5.0"
 ```
 
 Once installed, you can extend or implement the classes in this package to speed up writing Laravel packages further. There are no service providers to register.
@@ -46,7 +45,7 @@ This interface defines one public method.
 
 The `'connect'` method accepts one parameter which is an array of config.
 
-This interface is not used by this package, but is used by [Laravel Flysystem](https://github.com/GrahamCampbell/Laravel-Flysystem).
+This interface is not used by this package, but is used by the likes of [Laravel Flysystem](https://github.com/GrahamCampbell/Laravel-Flysystem).
 
 ##### ManagerInterface
 

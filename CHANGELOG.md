@@ -2,6 +2,13 @@ CHANGE LOG
 ==========
 
 
+## V5.0 (24/01/2022)
+
+* Support Laravel 8-10 only
+* Support PHP 7.4-8.2 only
+* Added property and return types
+
+
 ## V4.7 (24/01/2022)
 
 * Provisional Laravel 9 support

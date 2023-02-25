@@ -11,45 +11,17 @@ jobs:
 
     strategy:
       matrix:
-        php: ['7.1', '7.2', '7.3', '7.4', '8.0', '8.1']
-        laravel: ['5.5', '5.6', '5.7', '5.8', '6', '7', '8', '9']
+        php: ['7.4', '8.0', '8.1', '8.2']
+        laravel: ['8', '9', '10']
         exclude:
-          - php: '7.1'
-            laravel: '6'
-          - php: '7.1'
-            laravel: '7'
-          - php: '7.1'
-            laravel: '8'
-          - php: '7.1'
-            laravel: '9'
-          - php: '7.2'
-            laravel: '8'
-          - php: '7.2'
-            laravel: '9'
-          - php: '7.3'
-            laravel: '9'
           - php: '7.4'
             laravel: '9'
+          - php: '7.4'
+            laravel: '10'
           - php: '8.0'
-            laravel: '5.5'
-          - php: '8.0'
-            laravel: '5.6'
-          - php: '8.0'
-            laravel: '5.7'
-          - php: '8.0'
-            laravel: '5.8'
-          - php: '8.1'
-            laravel: '5.5'
-          - php: '8.1'
-            laravel: '5.6'
-          - php: '8.1'
-            laravel: '5.7'
-          - php: '8.1'
-            laravel: '5.8'
-          - php: '8.1'
-            laravel: '6'
-          - php: '8.1'
-            laravel: '7'
+            laravel: '10'
+          - php: '8.2'
+            laravel: '8'
 
     steps:
       - name: Checkout Code
@@ -61,64 +33,18 @@ jobs:
           php-version: ${{ matrix.php }}
           tools: composer:v2
           coverage: none
+        env:
+          update: true
 
       - name: Setup Problem Matchers
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
-
-      - name: Select Laravel 5.5
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 5
-          max_attempts: 5
-          command: composer require "laravel/framework:5.5.*" "phpunit/phpunit:^6.5.14" --no-update --no-interaction
-        if: "matrix.laravel == '5.5'"
-
-      - name: Select Laravel 5.6
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 5
-          max_attempts: 5
-          command: composer require "laravel/framework:5.6.*" "phpunit/phpunit:^7.5.20" --no-update --no-interaction
-        if: "matrix.laravel == '5.6'"
-
-      - name: Select Laravel 5.7
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 5
-          max_attempts: 5
-          command: composer require "laravel/framework:5.7.*" "phpunit/phpunit:^7.5.20" --no-update --no-interaction
-        if: "matrix.laravel == '5.7'"
-
-      - name: Select Laravel 5.8
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 5
-          max_attempts: 5
-          command: composer require "laravel/framework:5.8.*" "phpunit/phpunit:^7.5.20|^8.5.8" --no-update --no-interaction
-        if: "matrix.laravel == '5.8'"
-
-      - name: Select Laravel 6
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 5
-          max_attempts: 5
-          command: composer require "laravel/framework:6.*" "phpunit/phpunit:^8.5.8|^9.3.7" --no-update --no-interaction
-        if: "matrix.laravel == '6'"
-
-      - name: Select Laravel 7
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 5
-          max_attempts: 5
-          command: composer require "laravel/framework:7.*" "phpunit/phpunit:^8.5.8|^9.3.7" --no-update --no-interaction
-        if: "matrix.laravel == '7'"
 
       - name: Select Laravel 8
         uses: nick-invision/retry@v2
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:8.*" "phpunit/phpunit:^9.3.7" --no-update --no-interaction
+          command: composer require "laravel/framework:^8.83.27" "phpunit/phpunit:^9.6.3" --no-update --no-interaction
         if: "matrix.laravel == '8'"
 
       - name: Select Laravel 9
@@ -126,8 +52,16 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:9.*" "phpunit/phpunit:^9.5.12" --no-update --no-interaction
+          command: composer require "laravel/framework:^9.52.4" "phpunit/phpunit:^9.6.3" --no-update --no-interaction
         if: "matrix.laravel == '9'"
+
+      - name: Select Laravel 10
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: composer require "laravel/framework:^10.1.5" "phpunit/phpunit:^10.0.12" --no-update --no-interaction
+        if: "matrix.laravel == '10'"
 
       - name: Install PHP Dependencies
         uses: nick-invision/retry@v2

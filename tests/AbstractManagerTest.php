@@ -29,107 +29,107 @@ class AbstractManagerTest extends TestCase
 {
     use MockeryTrait;
 
-    public function testConnectionName()
+    public function testConnectionName(): void
     {
         $config = ['driver' => 'manager'];
 
-        $manager = $this->getConfigManager($config);
+        $manager = self::getConfigManager($config);
 
-        $this->assertSame([], $manager->getConnections());
+        self::assertSame([], $manager->getConnections());
 
         $return = $manager->connection('example');
 
-        $this->assertInstanceOf(ExampleClass::class, $return);
+        self::assertInstanceOf(ExampleClass::class, $return);
 
-        $this->assertSame('example', $return->getName());
+        self::assertSame('example', $return->getName());
 
-        $this->assertSame('manager', $return->getDriver());
+        self::assertSame('manager', $return->getDriver());
 
-        $this->assertArrayHasKey('example', $manager->getConnections());
+        self::assertArrayHasKey('example', $manager->getConnections());
 
         $return = $manager->reconnect('example');
 
-        $this->assertInstanceOf(ExampleClass::class, $return);
+        self::assertInstanceOf(ExampleClass::class, $return);
 
-        $this->assertSame('example', $return->getName());
+        self::assertSame('example', $return->getName());
 
-        $this->assertSame('manager', $return->getDriver());
+        self::assertSame('manager', $return->getDriver());
 
-        $this->assertArrayHasKey('example', $manager->getConnections());
+        self::assertArrayHasKey('example', $manager->getConnections());
 
-        $manager = $this->getManager();
+        $manager = self::getManager();
 
         $manager->disconnect('example');
 
-        $this->assertSame([], $manager->getConnections());
+        self::assertSame([], $manager->getConnections());
     }
 
-    public function testConnectionNull()
+    public function testConnectionNull(): void
     {
         $config = ['driver' => 'manager'];
 
-        $manager = $this->getConfigManager($config);
+        $manager = self::getConfigManager($config);
 
         $manager->getConfig()->shouldReceive('get')->twice()
             ->with('manager.default')->andReturn('example');
 
-        $this->assertSame([], $manager->getConnections());
+        self::assertSame([], $manager->getConnections());
 
         $return = $manager->connection();
 
-        $this->assertInstanceOf(ExampleClass::class, $return);
+        self::assertInstanceOf(ExampleClass::class, $return);
 
-        $this->assertSame('example', $return->getName());
+        self::assertSame('example', $return->getName());
 
-        $this->assertSame('manager', $return->getDriver());
+        self::assertSame('manager', $return->getDriver());
 
-        $this->assertArrayHasKey('example', $manager->getConnections());
+        self::assertArrayHasKey('example', $manager->getConnections());
 
         $return = $manager->reconnect();
 
-        $this->assertInstanceOf(ExampleClass::class, $return);
+        self::assertInstanceOf(ExampleClass::class, $return);
 
-        $this->assertSame('example', $return->getName());
+        self::assertSame('example', $return->getName());
 
-        $this->assertSame('manager', $return->getDriver());
+        self::assertSame('manager', $return->getDriver());
 
-        $this->assertArrayHasKey('example', $manager->getConnections());
+        self::assertArrayHasKey('example', $manager->getConnections());
 
-        $manager = $this->getManager();
+        $manager = self::getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('manager.default')->andReturn('example');
 
         $manager->disconnect();
 
-        $this->assertSame([], $manager->getConnections());
+        self::assertSame([], $manager->getConnections());
     }
 
-    public function testConnectionError()
+    public function testConnectionError(): void
     {
-        $manager = $this->getManager();
+        $manager = self::getManager();
 
         $config = ['driver' => 'error'];
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('manager.connections')->andReturn(['example' => $config]);
 
-        $this->assertSame([], $manager->getConnections());
+        self::assertSame([], $manager->getConnections());
 
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Connection [error] not configured.');
+        self::expectException(InvalidArgumentException::class);
+        self::expectExceptionMessage('Connection [error] not configured.');
 
         $manager->connection('error');
     }
 
-    public function testDefaultConnection()
+    public function testDefaultConnection(): void
     {
-        $manager = $this->getManager();
+        $manager = self::getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('manager.default')->andReturn('example');
 
-        $this->assertSame('example', $manager->getDefaultConnection());
+        self::assertSame('example', $manager->getDefaultConnection());
 
         $manager->getConfig()->shouldReceive('set')->once()
             ->with('manager.default', 'new');
@@ -139,84 +139,84 @@ class AbstractManagerTest extends TestCase
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('manager.default')->andReturn('new');
 
-        $this->assertSame('new', $manager->getDefaultConnection());
+        self::assertSame('new', $manager->getDefaultConnection());
     }
 
-    public function testExtendName()
+    public function testExtendName(): void
     {
-        $manager = $this->getManager();
+        $manager = self::getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('manager.connections')->andReturn(['foo' => ['driver' => 'hello']]);
 
-        $manager->extend('foo', function (array $config) {
+        $manager->extend('foo', function (array $config): FooClass {
             return new FooClass($config['name'], $config['driver']);
         });
 
-        $this->assertSame([], $manager->getConnections());
+        self::assertSame([], $manager->getConnections());
 
         $return = $manager->connection('foo');
 
-        $this->assertInstanceOf(FooClass::class, $return);
+        self::assertInstanceOf(FooClass::class, $return);
 
-        $this->assertSame('foo', $return->getName());
+        self::assertSame('foo', $return->getName());
 
-        $this->assertSame('hello', $return->getDriver());
+        self::assertSame('hello', $return->getDriver());
 
-        $this->assertArrayHasKey('foo', $manager->getConnections());
+        self::assertArrayHasKey('foo', $manager->getConnections());
     }
 
-    public function testExtendDriver()
+    public function testExtendDriver(): void
     {
-        $manager = $this->getManager();
+        $manager = self::getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('manager.connections')->andReturn(['qwerty' => ['driver' => 'bar']]);
 
-        $manager->extend('bar', function (array $config) {
+        $manager->extend('bar', function (array $config): BarClass {
             return new BarClass($config['name'], $config['driver']);
         });
 
-        $this->assertSame([], $manager->getConnections());
+        self::assertSame([], $manager->getConnections());
 
         $return = $manager->connection('qwerty');
 
-        $this->assertInstanceOf(BarClass::class, $return);
+        self::assertInstanceOf(BarClass::class, $return);
 
-        $this->assertSame('qwerty', $return->getName());
+        self::assertSame('qwerty', $return->getName());
 
-        $this->assertSame('bar', $return->getDriver());
+        self::assertSame('bar', $return->getDriver());
 
-        $this->assertArrayHasKey('qwerty', $manager->getConnections());
+        self::assertArrayHasKey('qwerty', $manager->getConnections());
     }
 
-    public function testExtendDriverCallable()
+    public function testExtendDriverCallable(): void
     {
-        $manager = $this->getManager();
+        $manager = self::getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('manager.connections')->andReturn(['qwerty' => ['driver' => 'bar']]);
 
         $manager->extend('bar', [BarFactory::class, 'create']);
 
-        $this->assertSame([], $manager->getConnections());
+        self::assertSame([], $manager->getConnections());
 
         $return = $manager->connection('qwerty');
 
-        $this->assertInstanceOf(BarClass::class, $return);
+        self::assertInstanceOf(BarClass::class, $return);
 
-        $this->assertSame('qwerty', $return->getName());
+        self::assertSame('qwerty', $return->getName());
 
-        $this->assertSame('bar', $return->getDriver());
+        self::assertSame('bar', $return->getDriver());
 
-        $this->assertArrayHasKey('qwerty', $manager->getConnections());
+        self::assertArrayHasKey('qwerty', $manager->getConnections());
     }
 
-    public function testCall()
+    public function testCall(): void
     {
         $config = ['driver' => 'manager'];
 
-        $manager = $this->getManager();
+        $manager = self::getManager();
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('manager.default')->andReturn('example');
@@ -224,25 +224,25 @@ class AbstractManagerTest extends TestCase
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('manager.connections')->andReturn(['example' => $config]);
 
-        $this->assertSame([], $manager->getConnections());
+        self::assertSame([], $manager->getConnections());
 
         $return = $manager->getName();
 
-        $this->assertSame('example', $return);
+        self::assertSame('example', $return);
 
-        $this->assertArrayHasKey('example', $manager->getConnections());
+        self::assertArrayHasKey('example', $manager->getConnections());
     }
 
-    protected function getManager()
+    private static function getManager(): ExampleManager
     {
         $repo = Mockery::mock(Repository::class);
 
         return new ExampleManager($repo);
     }
 
-    protected function getConfigManager(array $config)
+    private static function getConfigManager(array $config): ExampleManager
     {
-        $manager = $this->getManager();
+        $manager = self::getManager();
 
         $manager->getConfig()->shouldReceive('get')->twice()
             ->with('manager.connections')->andReturn(['example' => $config]);
@@ -260,7 +260,7 @@ class ExampleManager extends AbstractManager
      *
      * @return string
      */
-    protected function createConnection(array $config)
+    protected function createConnection(array $config): ExampleClass
     {
         return new ExampleClass($config['name'], $config['driver']);
     }
@@ -270,7 +270,7 @@ class ExampleManager extends AbstractManager
      *
      * @return string
      */
-    protected function getConfigName()
+    protected function getConfigName(): string
     {
         return 'manager';
     }
@@ -278,21 +278,21 @@ class ExampleManager extends AbstractManager
 
 abstract class AbstractClass
 {
-    protected $name;
-    protected $driver;
+    private string $name;
+    private string  $driver;
 
-    public function __construct($name, $driver)
+    public function __construct(string $name, string $driver)
     {
         $this->name = $name;
         $this->driver = $driver;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getDriver()
+    public function getDriver(): string
     {
         return $this->driver;
     }
@@ -315,7 +315,7 @@ class BarClass extends AbstractClass
 
 class BarFactory
 {
-    public static function create(array $config)
+    public static function create(array $config): BarClass
     {
         return new BarClass($config['name'], $config['driver']);
     }
