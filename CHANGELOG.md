@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V5.1 (UPCOMING)
+## V5.1 (03/12/2023)
 
 * Add PHP 8.3 support
 * Add Laravel 11 support
