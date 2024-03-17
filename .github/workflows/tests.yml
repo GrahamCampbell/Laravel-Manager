@@ -50,39 +50,39 @@ jobs:
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Select Laravel 8
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^8.83.27" "phpunit/phpunit:^9.6.15" --no-update --no-interaction
+          command: composer require "laravel/framework:^8.83.27" "phpunit/phpunit:^9.6.17" --no-update --no-interaction
         if: "matrix.laravel == '8'"
 
       - name: Select Laravel 9
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^9.52.16" "phpunit/phpunit:^9.6.15" --no-update --no-interaction
+          command: composer require "laravel/framework:^9.52.16" "phpunit/phpunit:^9.6.17" --no-update --no-interaction
         if: "matrix.laravel == '9'"
 
       - name: Select Laravel 10
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^10.34.2" "phpunit/phpunit:^10.4.2" --no-update --no-interaction
+          command: composer require "laravel/framework:^10.34.2" "phpunit/phpunit:^10.5.13" --no-update --no-interaction
         if: "matrix.laravel == '10'"
 
       - name: Select Laravel 11
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "nunomaduro/termwind:2.*@dev" "psy/psysh:0.12.*@dev" "laravel/tinker:dev-develop" "laravel/framework:11.*@dev" "orchestra/canvas-core:9.*@dev" "orchestra/canvas:9.*@dev" "orchestra/workbench:9.*@dev" "orchestra/testbench-core:9.*@dev" "orchestra/testbench:9.*@dev" "phpunit/phpunit:^10.5" --no-update --no-interaction
+          command: composer require "laravel/framework:^11.0.7" "phpunit/phpunit:^10.5.13" --no-update --no-interaction
         if: "matrix.laravel == '11'"
 
       - name: Install PHP Dependencies
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
