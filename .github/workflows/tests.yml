@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        php: ['7.4', '8.0', '8.1', '8.2', '8.3']
+        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
         laravel: ['8', '9', '10', '11']
         exclude:
           - php: '7.4'
@@ -31,6 +31,10 @@ jobs:
           - php: '8.3'
             laravel: '8'
           - php: '8.3'
+            laravel: '9'
+          - php: '8.4'
+            laravel: '8'
+          - php: '8.4'
             laravel: '9'
 
     steps:
@@ -54,7 +58,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^8.83.27" "phpunit/phpunit:^9.6.17" --no-update --no-interaction
+          command: composer require "laravel/framework:^8.83.29" "phpunit/phpunit:^9.6.22" --no-update --no-interaction
         if: "matrix.laravel == '8'"
 
       - name: Select Laravel 9
@@ -62,7 +66,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^9.52.16" "phpunit/phpunit:^9.6.17" --no-update --no-interaction
+          command: composer require "laravel/framework:^9.52.18" "phpunit/phpunit:^9.6.22" --no-update --no-interaction
         if: "matrix.laravel == '9'"
 
       - name: Select Laravel 10
@@ -70,7 +74,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^10.34.2" "phpunit/phpunit:^10.5.13" --no-update --no-interaction
+          command: composer require "laravel/framework:^10.48.25" "phpunit/phpunit:^10.5.41" --no-update --no-interaction
         if: "matrix.laravel == '10'"
 
       - name: Select Laravel 11
@@ -78,7 +82,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^11.0.7" "phpunit/phpunit:^10.5.13" --no-update --no-interaction
+          command: composer require "laravel/framework:^11.37.0" "phpunit/phpunit:^10.5.41" --no-update --no-interaction
         if: "matrix.laravel == '11'"
 
       - name: Install PHP Dependencies
