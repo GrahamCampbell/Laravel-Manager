@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V5.2 (02/03/2025)
+
+* Add Laravel 12 support
+
+
 ## V5.1.1 (13/01/2025)
 
 * Add PHP 8.4 support
