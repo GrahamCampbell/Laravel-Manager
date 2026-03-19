@@ -11,8 +11,8 @@ jobs:
 
     strategy:
       matrix:
-        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
-        laravel: ['8', '9', '10', '11', '12']
+        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5']
+        laravel: ['8', '9', '10', '11', '12', '13']
         exclude:
           - php: '7.4'
             laravel: '9'
@@ -22,18 +22,26 @@ jobs:
             laravel: '11'
           - php: '7.4'
             laravel: '12'
+          - php: '7.4'
+            laravel: '13'
           - php: '8.0'
             laravel: '10'
           - php: '8.0'
             laravel: '11'
           - php: '8.0'
             laravel: '12'
+          - php: '8.0'
+            laravel: '13'
           - php: '8.1'
             laravel: '11'
           - php: '8.1'
             laravel: '12'
+          - php: '8.1'
+            laravel: '13'
           - php: '8.2'
             laravel: '8'
+          - php: '8.2'
+            laravel: '13'
           - php: '8.3'
             laravel: '8'
           - php: '8.3'
@@ -42,10 +50,16 @@ jobs:
             laravel: '8'
           - php: '8.4'
             laravel: '9'
+          - php: '8.5'
+            laravel: '8'
+          - php: '8.5'
+            laravel: '9'
+          - php: '8.5'
+            laravel: '10'
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -60,47 +74,55 @@ jobs:
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Select Laravel 8
-        uses: nick-invision/retry@v3
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^8.83.29" "phpunit/phpunit:^9.6.22" "graham-campbell/analyzer:^4.2.1" --no-update --no-interaction
+          command: composer require "laravel/framework:^8.83.29" "phpunit/phpunit:^9.6.34" "graham-campbell/analyzer:^4.2.1" --no-update --no-interaction
         if: "matrix.laravel == '8'"
 
       - name: Select Laravel 9
-        uses: nick-invision/retry@v3
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^9.52.20" "phpunit/phpunit:^9.6.22" "graham-campbell/analyzer:^4.2.1" --no-update --no-interaction
+          command: composer require "laravel/framework:^9.52.21" "phpunit/phpunit:^9.6.24" "graham-campbell/analyzer:^4.2.1" --no-update --no-interaction
         if: "matrix.laravel == '9'"
 
       - name: Select Laravel 10
-        uses: nick-invision/retry@v3
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^10.48.28" "phpunit/phpunit:^10.5.45" "graham-campbell/analyzer:^5.0.0" --no-update --no-interaction
+          command: composer require "laravel/framework:^10.50.2" "phpunit/phpunit:^10.5.65" "graham-campbell/analyzer:^5.1.0" --no-update --no-interaction
         if: "matrix.laravel == '10'"
 
       - name: Select Laravel 11
-        uses: nick-invision/retry@v3
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^11.44.0" "phpunit/phpunit:^10.5.45" "graham-campbell/analyzer:^5.0.0" --no-update --no-interaction
+          command: composer require "laravel/framework:^11.50.0" "phpunit/phpunit:^10.5.65" "graham-campbell/analyzer:^5.1.0" --no-update --no-interaction
         if: "matrix.laravel == '11'"
 
       - name: Select Laravel 12
-        uses: nick-invision/retry@v3
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^12.0.1" "phpunit/phpunit:^11.5.10" "graham-campbell/analyzer:^5.0.0" --no-update --no-interaction
-        if: "matrix.laravel == '11'"
+          command: composer require "laravel/framework:^12.55.1" "phpunit/phpunit:^11.5.55" "graham-campbell/analyzer:^5.1.0" --no-update --no-interaction
+        if: "matrix.laravel == '12'"
+
+      - name: Select Laravel 12
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: composer require "laravel/framework:^13.1.1" "phpunit/phpunit:^12.5.14" "graham-campbell/analyzer:^5.1.0" --no-update --no-interaction
+        if: "matrix.laravel == '13'"
 
       - name: Install PHP Dependencies
-        uses: nick-invision/retry@v3
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
