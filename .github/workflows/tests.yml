@@ -86,7 +86,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^9.52.21" "phpunit/phpunit:^9.6.24" "graham-campbell/analyzer:^4.2.1" --no-update --no-interaction
+          command: composer require "laravel/framework:^9.52.21" "phpunit/phpunit:^9.6.34" "graham-campbell/analyzer:^4.2.1" --no-update --no-interaction
         if: "matrix.laravel == '9'"
 
       - name: Select Laravel 10
@@ -94,7 +94,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^10.50.2" "phpunit/phpunit:^10.5.65" "graham-campbell/analyzer:^5.1.0" --no-update --no-interaction
+          command: composer require "laravel/framework:^10.50.2" "phpunit/phpunit:^10.5.63" "graham-campbell/analyzer:^5.1.0" --no-update --no-interaction
         if: "matrix.laravel == '10'"
 
       - name: Select Laravel 11
@@ -102,7 +102,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:^11.50.0" "phpunit/phpunit:^10.5.65" "graham-campbell/analyzer:^5.1.0" --no-update --no-interaction
+          command: composer require "laravel/framework:^11.50.0" "phpunit/phpunit:^10.5.63" "graham-campbell/analyzer:^5.1.0" --no-update --no-interaction
         if: "matrix.laravel == '11'"
 
       - name: Select Laravel 12
