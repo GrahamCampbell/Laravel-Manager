@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V5.3 (UPCOMING)
+## V5.3 (19/03/2026)
 
 * Add PHP 8.5 support
 * Add Laravel 13 support
