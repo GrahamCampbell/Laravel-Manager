@@ -115,7 +115,7 @@ jobs:
           command: composer require "laravel/framework:^12.55.1" "phpunit/phpunit:^11.5.55" "graham-campbell/analyzer:^5.1.0" --no-update --no-interaction
         if: "matrix.laravel == '12'"
 
-      - name: Select Laravel 12
+      - name: Select Laravel 13
         uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
